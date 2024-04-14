@@ -1,0 +1,3 @@
+venv/
+terraform/
+db.sqlite3
