@@ -49,6 +49,14 @@ jobs:
       with:
         image: your/image-to-test
         args: --file=dockerfile
+        
+    - name: Save SARIF as artifact
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: snyk-sarif
+        path: snyk.sarif
+
     - name: Upload result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
